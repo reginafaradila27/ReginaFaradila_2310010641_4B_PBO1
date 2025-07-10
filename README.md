@@ -17,11 +17,11 @@ Berikut adalah bagian kode yang relevan dengan konsep OOP yang dijelaskan:
 ```bash
 
 
-public class MahasiswaDetail extends Mahasiswa {
+public class infosepatu extends sepatu {
     ...
 }
 
-public class MahasiswaBeraksi {
+public class produksepatu {
     ...
 }
 ```
@@ -148,10 +148,10 @@ System.out.println("\nData Mahasiswa:");
 System.out.println(mahasiswa.displayInfo());
 ```
 
-13. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `MahasiswaDetail[] mahasiswas = new MahasiswaDetail[2];` adalah contoh penggunaan array.
+13. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `produksepatu[] sepatu = new produksepatu[2];` adalah contoh penggunaan array.
 
 ```bash
-produksepatu[] sepatu = new MahasiswaDetail[2];
+produksepatu[] sepatu = new produksepatu[2];
 ```
 
 14. **Error Handling** digunakan untuk menangani error yang mungkin terjadi saat runtime. Pada kode ini, digunakan `try catch` untuk menangani error.
