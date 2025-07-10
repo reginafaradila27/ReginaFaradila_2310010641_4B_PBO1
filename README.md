@@ -26,72 +26,72 @@ public class MahasiswaBeraksi {
 }
 ```
 
-2. **Object** adalah instance dari class. Pada kode ini, `mhs[i] = new MahasiswaDetail(nama, npm);` adalah contoh pembuatan object.
+2. **Object** adalah instance dari class. Pada kode ini, `spt[i] = new sepatu(nama_sepatu, merk);` adalah contoh pembuatan object.
 
 ```bash
-mhs[i] = new MahasiswaDetail(nama, npm);
+spt[i] = new sepatu(nama_sepatu, merk);
 ```
 
-3. **Atribut** adalah variabel yang ada dalam class. Pada kode ini, `nama` dan `npm` adalah contoh atribut.
+3. **Atribut** adalah variabel yang ada dalam class. Pada kode ini, `nama_` dan `merk` adalah contoh atribut.
 
 ```bash
-String nama;
-String npm;
+String nama_sepatu;
+String merk;
 ```
 
-4. **Constructor** adalah method yang pertama kali dijalankan pada saat pembuatan object. Pada kode ini, constructor ada di dalam class `Mahasiswa` dan `MahasiswaDetail`.
+4. **Constructor** adalah method yang pertama kali dijalankan pada saat pembuatan object. Pada kode ini, constructor ada di dalam class `nama_sepatu` dan `merk`.
 
 ```bash
-public Mahasiswa(String nama, String npm) {
+public Mahasiswa(String nama_sepatu, String merk) {
+    this.nama_sepatu = nama_sepatu;
+    this.merk = merk;
+}
+
+public MahasiswaDetail(String nama_sepatu, String merk) {
+    super(nama_sepatu, merk);
+}
+```
+
+5. **Mutator** atau setter digunakan untuk mengubah nilai dari suatu atribut. Pada kode ini, `setNama_sepatu` dan `setmerk` adalah contoh method mutator.
+
+```bash
+public void setNama_sepatu(String nama_sepatu) {
     this.nama = nama;
-    this.npm = npm;
 }
 
-public MahasiswaDetail(String nama, String npm) {
-    super(nama, npm);
-}
-```
-
-5. **Mutator** atau setter digunakan untuk mengubah nilai dari suatu atribut. Pada kode ini, `setNama` dan `setNpm` adalah contoh method mutator.
-
-```bash
-public void setNama(String nama) {
-    this.nama = nama;
-}
-
-public void setNpm(String npm) {
-    this.npm = npm;
+public void setNpm(String merk) {
+    this.npm = merk;
 }
 ```
 
-6. **Accessor** atau getter digunakan untuk mengambil nilai dari suatu atribut. Pada kode ini, `getNama`, `getNpm`, `getTahunMasuk`, `getFakultas`, `getProdi`, dan `getNoRegistrasi` adalah contoh method accessor.
+6. **Accessor** atau getter digunakan untuk mengambil nilai dari suatu atribut. Pada kode ini, `getNama_sepatu`, `getmerk`, `getwarna`, `getukuran`, dan `getharga` adalah contoh method accessor.
 
 ```bash
-public String getNama() {
-    return nama;
+public String getNama_sepatu() {
+    return nama_sepatu;
 }
 
-public String getNpm() {
-    return npm;
+public String getmerk() {
+    return merk;
 }
 ```
 
-7. **Encapsulation** adalah konsep menyembunyikan data dengan membuat atribut menjadi private dan hanya bisa diakses melalui method. Pada kode ini, atribut `nama` dan `npm` dienkapsulasi dan hanya bisa diakses melalui method getter dan setter.
+7. **Encapsulation** adalah konsep menyembunyikan data dengan membuat atribut menjadi private dan hanya bisa diakses melalui method. Pada kode ini, atribut `nama_sepatu` dan `merk` dienkapsulasi dan hanya bisa diakses melalui method getter dan setter.
 
 ```bash
-private String nama;
-private String npm;
+private String nama_sepatu;
+private String merk;
 ```
 
-8. **Inheritance** adalah konsep di mana sebuah class bisa mewarisi property dan method dari class lain. Pada kode ini, `MahasiswaDetail` mewarisi `Mahasiswa` dengan sintaks `extends`.
+8. **Inheritance** adalah konsep di mana sebuah class bisa mewarisi property dan method dari class lain. Pada kode ini, `produksepatu` mewarisi `sepatu` dengan sintaks `extends`.
 
 ```bash
-public class MahasiswaDetail extends Mahasiswa {
+public class produksepatu extends sepatu {
     ...
 }
 ```
 
-9. **Polymorphism** adalah konsep di mana sebuah nama dapat digunakan untuk merujuk ke beberapa tipe atau bentuk objek berbeda. Ini memungkinkan metode-metode dengan nama yang sama untuk berperilaku berbeda tergantung pada tipe objek yang mereka manipulasi, polymorphism bisa berbentuk Overloading ataupun Overriding. Pada kode ini, method `displayInfo(String)` di `Mahasiswa` merupakan overloading method `displayInfo` dan `displayInfo` di `MahasiswaDetail` merupakan override dari method `displayInfo` di `Mahasiswa`.
+9. **Polymorphism** adalah konsep di mana sebuah nama dapat digunakan untuk merujuk ke beberapa tipe atau bentuk objek berbeda. Ini memungkinkan metode-metode dengan nama yang sama untuk berperilaku berbeda tergantung pada tipe objek yang mereka manipulasi, polymorphism bisa berbentuk Overloading ataupun Overriding. Pada kode ini, method `displayInfo(String)` di `Mahasiswa` merupakan overloading method `displayInfo` dan `displayInfo` di `MahasiswaDetail` merupakan override dari method `displayInfo` di `sepatu`.
 
 ```bash
 public String displayInfo(String kelas) {
@@ -151,7 +151,7 @@ System.out.println(mahasiswa.displayInfo());
 13. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `MahasiswaDetail[] mahasiswas = new MahasiswaDetail[2];` adalah contoh penggunaan array.
 
 ```bash
-MahasiswaDetail[] mahasiswas = new MahasiswaDetail[2];
+produksepatu[] sepatu = new MahasiswaDetail[2];
 ```
 
 14. **Error Handling** digunakan untuk menangani error yang mungkin terjadi saat runtime. Pada kode ini, digunakan `try catch` untuk menangani error.
@@ -186,5 +186,5 @@ try {
 
 ## Pembuat
 
-Nama: Muhammad Edya Rosadi
-NPM: 2110010001
+Nama: Regina Faradila
+NPM: 2310010641
