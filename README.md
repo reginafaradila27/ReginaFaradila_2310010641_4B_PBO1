@@ -78,13 +78,20 @@ String merk;
 4. **Constructor** adalah method yang pertama kali dijalankan pada saat pembuatan object. Pada kode ini, constructor ada di dalam class `nama_sepatu` dan `merk`.
 
 ```bash
-public Mahasiswa(String nama_sepatu, String merk) {
+public sepatu(String nama_sepatu, String merk) {
     this.nama_sepatu = nama_sepatu;
     this.merk = merk;
 }
 
-public MahasiswaDetail(String nama_sepatu, String merk) {
+}
+
+public infoSepatu(String nama_sepatu, String merk, String ukuran, int harga, String warna) {
     super(nama_sepatu, merk);
+    this.ukuran = ukuran;
+    this.harga = harga;
+    this.warna = warna;
+}
+
 }
 ```
 
@@ -92,12 +99,21 @@ public MahasiswaDetail(String nama_sepatu, String merk) {
 
 ```bash
 public void setNama_sepatu(String nama_sepatu) {
-    this.nama = nama;
+    this.nama_sepatu = nama_sepatu;
 }
 
-public void setNpm(String merk) {
-    this.npm = merk;
+public void setUkuran(String ukuran) {
+    this.ukuran = ukuran;
 }
+
+public void setHarga(int harga) {
+    this.harga = harga;
+}
+
+public void setWarna(String warna) {
+    this.warna = warna;
+}
+
 ```
 
 6. **Accessor** atau getter digunakan untuk mengambil nilai dari suatu atribut. Pada kode ini, `getNama_sepatu`, `getmerk`, `getwarna`, `getukuran`, dan `getharga` adalah contoh method accessor.
@@ -107,9 +123,22 @@ public String getNama_sepatu() {
     return nama_sepatu;
 }
 
-public String getmerk() {
+public String getMerk() {
     return merk;
 }
+
+public String getUkuran() {
+    return ukuran;
+}
+
+public int getHarga() {
+    return harga;
+}
+
+public String getWarna() {
+    return warna;
+}
+
 ```
 
 7. **Encapsulation** adalah konsep menyembunyikan data dengan membuat atribut menjadi private dan hanya bisa diakses melalui method. Pada kode ini, atribut `nama_sepatu` dan `merk` dienkapsulasi dan hanya bisa diakses melalui method getter dan setter.
@@ -127,77 +156,70 @@ public class produksepatu extends sepatu {
 }
 ```
 
-9. **Polymorphism** adalah konsep di mana sebuah nama dapat digunakan untuk merujuk ke beberapa tipe atau bentuk objek berbeda. Ini memungkinkan metode-metode dengan nama yang sama untuk berperilaku berbeda tergantung pada tipe objek yang mereka manipulasi, polymorphism bisa berbentuk Overloading ataupun Overriding. Pada kode ini, method `displayInfo(String)` di `Mahasiswa` merupakan overloading method `displayInfo` dan `displayInfo` di `MahasiswaDetail` merupakan override dari method `displayInfo` di `sepatu`.
+9. **Polymorphism** adalah konsep di mana sebuah nama dapat digunakan untuk merujuk ke beberapa tipe atau bentuk objek berbeda. Ini memungkinkan metode-metode dengan nama yang sama untuk berperilaku berbeda tergantung pada tipe objek yang mereka manipulasi, polymorphism bisa berbentuk Overloading ataupun Overriding. Pada kode ini, method `displayInfo(String)` di `sepatu` merupakan overloading method `displayInfo` dan `displayInfo` di `produksepatu` merupakan override dari method `displayInfo` di `sepatu`.
 
 ```bash
-public String displayInfo(String kelas) {
-    return displayInfo() + "\nKelas: " + kelas;
-}
 
-@Override
 public String displayInfo() {
-    ...
+    return super.displayInfo() +
+           "\nUkuran: " + ukuran +
+           "\nWarna: " + warna +
+           "\nHarga: Rp" + harga;
 }
+
 ```
 
-10. **Seleksi** adalah statement kontrol yang digunakan untuk membuat keputusan berdasarkan kondisi. Pada kode ini, digunakan seleksi `if else` dalam method `getFakultas` dan seleksi `switch` dalam method `getProdi`.
-
+10. **Seleksi** adalah statement kontrol yang digunakan untuk membuat keputusan berdasarkan kondisi tertentu. Dalam program ini, seleksi digunakan untuk menentukan kategori sepatu berdasarkan
 ```bash
-public String getFakultas() {
-    if(getNpm().substring(2, 4).equals("10")){
-        return "Teknologi Informasi";
-    } else {
-        return "Fakultas lain";
-    }
 
-    //return getNpm().substring(2, 4).equals("10") ? "Teknologi Informasi" : "Fakultas lain";
-}
 
-public String getProdi() {
-    switch(getNpm().substring(4, 6)) {
-        case "01":
-            return "Teknik Informatika";
-        case "02":
-            return "Sistem Informasi";
-        default:
-            return "Prodi lain";
-    }
-}
+
 ```
 
-11. **Perulangan** adalah statement kontrol yang digunakan untuk menjalankan blok kode berulang kali. Pada kode ini, digunakan loop `for` untuk meminta input dan menampilkan data.
+11. **Perulangan** adalah statement kontrol yang digunakan untuk menginput dan menampilkan data untuk beberapa sepatu. Menggunakan for.
 
 ```bash
-for (int i = 0; i < mahasiswas.length; i++) {
-    ...
+for (int i = 0; i < sepatu.length; i++) {
+    // proses input
 }
+
 ```
 
 12. **Input Output Sederhana** digunakan untuk menerima input dari user dan menampilkan output ke user. Pada kode ini, digunakan class `Scanner` untuk menerima input dan method `System.out.println` untuk menampilkan output.
 
 ```bash
-Scanner scanner = new Scanner(System.in);
-System.out.print("Masukkan Nama Mahasiswa ke-" + (i + 1) + ": ");
-String nama = scanner.nextLine();
+Scanner input = new Scanner(System.in);
 
-System.out.println("\nData Mahasiswa:");
-System.out.println(mahasiswa.displayInfo());
+System.out.print("Nama Sepatu: ");
+String nama = input.nextLine();
+
+System.out.print("Merk Sepatu: ");
+String merk = input.nextLine();
+
+System.out.print("Ukuran Sepatu: ");
+String ukuran = input.nextLine();
+
+System.out.print("Warna Sepatu: ");
+String warna = input.nextLine();
+
 ```
 
 13. **Array** adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Pada kode ini, `produksepatu[] sepatu = new produksepatu[2];` adalah contoh penggunaan array.
 
 ```bash
-produksepatu[] sepatu = new produksepatu[2];
+infoSepatu[] sepatu = new infoSepatu[2];
+
 ```
 
-14. **Error Handling** digunakan untuk menangani error yang mungkin terjadi saat runtime. Pada kode ini, digunakan `try catch` untuk menangani error.
-
+14. **Error Handling** digunakan untuk Menangani kesalahan input harga agar program tidak crash jika user salah memasukkan data.
 ```bash
 try {
-    // code that might throw an exception
+    System.out.print("Harga Sepatu: ");
+    harga = Integer.parseInt(input.nextLine());
 } catch (Exception e) {
-    System.out.println("Error: " + e.getMessage());
+    System.out.println("Input harga tidak valid, akan diset ke 0");
 }
+
 ```
 
 ## Usulan nilai
