@@ -169,8 +169,33 @@ public String displayInfo() {
 
 ```
 
-10. **Seleksi** adalah statement kontrol yang digunakan untuk membuat keputusan berdasarkan kondisi tertentu. Dalam program ini, seleksi digunakan untuk menentukan kategori sepatu berdasarkan
+10. **Seleksi** adalah statement kontrol yang digunakan untuk membuat keputusan berdasarkan kondisi tertentu. Dalam program ini, seleksi digunakan untuk menentukan kategori sepatu berdasarkan ukuran,harga,dan warna
 ```bash
+sepatu[i] = new infoSepatu(nama, merk, ukuran, harga, warna);
+
+if (ukuran.equals("38") || ukuran.equals("39")) {
+    System.out.println("Ukuran sepatu kecil");
+} else if (ukuran.equals("40") || ukuran.equals("41")) {
+    System.out.println("Ukuran sepatu sedang");
+} else {
+    System.out.println("Ukuran sepatu besar");
+}
+
+if (harga > 500000) {
+    System.out.println("Kategori: Sepatu Mahal");
+} else if (harga > 250000) {
+    System.out.println("Kategori: Sepatu Sedang");
+} else {
+    System.out.println("Kategori: Sepatu Murah");
+}
+
+if (warna.equalsIgnoreCase("Hitam")) {
+    System.out.println("Warna netral, cocok untuk semua suasana");
+} else if (warna.equalsIgnoreCase("Putih")) {
+    System.out.println("Warna cerah, memberikan kesan bersih");
+} else {
+    System.out.println("Warna unik dan mencolok");
+}
 
 
 
